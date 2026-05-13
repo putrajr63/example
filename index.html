@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Museum Explorer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="game-panel" aria-label="Museum exploration game">
+        <div class="topbar">
+          <div>
+            <h1>Museum Explorer</h1>
+            <p id="room-label">Main Hall</p>
+          </div>
+          <button id="reset-button" type="button" title="Return to main hall">Reset</button>
+        </div>
+
+        <canvas id="game" width="960" height="640" aria-label="Playable museum map"></canvas>
+
+        <div class="controls" aria-label="Movement controls">
+          <button data-move="up" type="button" title="Move up">&uarr;</button>
+          <button data-move="left" type="button" title="Move left">&larr;</button>
+          <button data-move="down" type="button" title="Move down">&darr;</button>
+          <button data-move="right" type="button" title="Move right">&rarr;</button>
+        </div>
+      </section>
+
+      <aside class="info-panel" aria-live="polite">
+        <div class="scene-media" id="scene-media"></div>
+        <p class="kicker" id="scene-kicker">Welcome</p>
+        <h2 id="scene-title">Walk into an exhibit doorway</h2>
+        <p id="scene-description">
+          Use the arrow keys, WASD, or the buttons below the canvas. When the character enters an exhibit,
+          this panel changes into an educational page for that room.
+        </p>
+        <ul id="scene-facts"></ul>
+      </aside>
+    </main>
+
+    <script src="data/exhibits.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>
